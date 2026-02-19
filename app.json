@@ -1,0 +1,22 @@
+{
+  "name": "main",
+  "displayName": "Starter App",
+  "expo": {
+    "name": "Starter App",
+    "slug": "starter-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.sudobility.starterapp"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.sudobility.starterapp"
+    }
+  }
+}
