@@ -44,8 +44,12 @@ const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0
 const auth = getAuth(app);
 
 // Enable persistence with AsyncStorage
-// @ts-ignore - getReactNativePersistence exists but types may not match
-auth.setPersistence(getReactNativePersistence(AsyncStorage));
+try {
+  // @ts-ignore - getReactNativePersistence exists but types may not match
+  auth.setPersistence(getReactNativePersistence(AsyncStorage));
+} catch (error) {
+  console.warn('[Auth] Failed to set persistence:', error);
+}
 
 // Lazy-load Google Sign-In to avoid crash when native module isn't linked yet
 let googleSignInConfigured = false;
@@ -53,8 +57,8 @@ async function getGoogleSignin() {
   const { GoogleSignin } = await import('@react-native-google-signin/google-signin');
   if (!googleSignInConfigured) {
     GoogleSignin.configure({
-      // Configure with your own client IDs
-      webClientId: 'YOUR_WEB_CLIENT_ID.apps.googleusercontent.com',
+      iosClientId: '1008456982478-34s3dd4ndeveq56rt1n774q85pda5v3f.apps.googleusercontent.com',
+      webClientId: '1008456982478-l6ai87gui758k3e0op384pfnp0ia6gi3.apps.googleusercontent.com',
     });
     googleSignInConfigured = true;
   }

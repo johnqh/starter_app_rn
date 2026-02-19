@@ -21,6 +21,7 @@ import { useAuth } from '@/context/AuthContext';
 import { useSettingsStore, type ThemeMode } from '@/stores/settingsStore';
 import { useAppColors } from '@/hooks/useAppColors';
 import type { SettingsScreenProps } from '@/navigation/types';
+import GoogleIcon from '@/components/GoogleIcon';
 
 // Theme options
 const themes: { value: ThemeMode; label: string }[] = [
@@ -241,6 +242,7 @@ export default function SettingsScreen(_props: SettingsScreenProps) {
               onPress={handleGoogleSignIn}
               disabled={isSubmitting}
             >
+              <GoogleIcon size={20} />
               <Text style={[styles.googleButtonText, { color: appColors.textSecondary }]}>
                 {t('auth.continueWithGoogle')}
               </Text>

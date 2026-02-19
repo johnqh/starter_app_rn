@@ -10,13 +10,13 @@
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.sudobility.starterapp"
+      "bundleIdentifier": "com.sudobility.starter"
     },
     "android": {
       "adaptiveIcon": {
         "backgroundColor": "#ffffff"
       },
-      "package": "com.sudobility.starterapp"
+      "package": "com.sudobility.starter"
     }
   }
 }

@@ -26,6 +26,7 @@ import { useHistoriesManager } from '@sudobility/starter_lib';
 import { useAppColors } from '@/hooks/useAppColors';
 import type { HistoriesListScreenProps } from '@/navigation/types';
 import type { History } from '@sudobility/starter_types';
+import GoogleIcon from '@/components/GoogleIcon';
 
 export default function HistoriesScreen({ navigation }: HistoriesListScreenProps) {
   const { t } = useTranslation();
@@ -186,6 +187,7 @@ export default function HistoriesScreen({ navigation }: HistoriesListScreenProps
                 onPress={handleGoogleSignIn}
                 disabled={isAuthSubmitting}
               >
+                <GoogleIcon size={20} />
                 <Text style={[styles.googleButtonText, { color: appColors.textSecondary }]}>
                   {t('auth.continueWithGoogle')}
                 </Text>
